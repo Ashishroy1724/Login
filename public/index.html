@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Smart Traveller</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+  <header>
+    <div class="content flex_space">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt=""></a>
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="login.html" onclick="redirectToLogin()">LOGIN</a> </li>
+          <li><a href="destination.html">destinations</a> </li>
+          <li><a href="weather.html">live weather</a> </li>
+          <li><a href="translator.html">translator</a> </li>
+          <li><a href="chatbot.html">chatbot</a> </li>
+          <li> <button class="primary-btn">BOOK NOW</button> </li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div> 
+  </header>
+
+  <script>
+    function redirectToLogin() {
+        // Check if the user is authenticated or not
+        // You need to replace this with your actual logic to determine if the user is authenticated or not
+        const isAuthenticated = true; // Replace true with your actual logic
+        
+        if (isAuthenticated) {
+            // If the user is authenticated, prevent default link behavior
+            event.preventDefault();
+            
+            // Redirect to the signup_successful.html page
+            window.location.href = "signup_successful.html";
+        }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+    if (errorMessage) {
+        document.getElementById('status-message').innerText = errorMessage;
+    }
+</script>
+
+  <script>
+    var menulist = document.getElementById('menulist');
+    menulist.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menulist.style.maxHeight == "0px") {
+        menulist.style.maxHeight = "100vh";
+      } else {
+        menulist.style.maxHeight = "0px";
+      }
+    }
+  </script>
+
+
+  <section class="home">
+    <div class="content">
+        <div class="item">
+          <video autoplay muted id="video1" class="video1">
+            <source src="videos/video1.mp4" type="video/mp4">
+          </video>
+          <div class="text">
+            <h1>Spend Your Holiday</h1>
+            <p>"Travel Far, Travel Wide, Travel Freely."
+            </p>
+            <div class="flex">
+              <li> <a href="destination.html"><button class="primary-btn">EXPLORE NOW</button></a></li>
+              
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <video autoplay muted id="video2" class="video2">
+            <source src="videos/video2.mp4" type="video/mp4">
+          </video>
+          <div class="text">
+            <h1>Spend Your Holiday</h1>
+            <p>"Travel Far, Travel Wide, Travel Freely."
+            </p>
+            <div class="flex">
+              <li> <a href="destination.html"><button class="primary-btn">EXPLORE NOW</button></a></li>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <video autoplay muted id="video3" class="video3">
+            <source src="videos/video3.mp4" type="video/mp4">
+          </video>
+          <div class="text">
+            <h1>Spend Your Holiday</h1>
+            <p>"Travel Far, Travel Wide, Travel Freely."
+            </p>
+            <div class="flex">
+              <li> <a href="destination.html"><button class="primary-btn">EXPLORE NOW</button></a></li>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <video autoplay muted id="video4" class="video4">
+            <source src="videos/video4.mp4" type="video/mp4">
+           </video>
+          <div class="text">
+            <h1>Spend Your Holiday</h1>
+            <p>"Travel Far, Travel Wide, Travel Freely."
+            </p>
+            <div class="flex">
+              <li> <a href="destination.html"><button class="primary-btn">EXPLORE NOW</button></a></li>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+ 
+  <section class="book">
+    <div class="container flex_space">
+      <div class="text">
+        <h1> <span>Book </span>   Your Rooms </h1>
+      </div>
+      <div class="form">
+        <form class="grid">
+          <input type="date" placeholder="Araival Date">
+          <input type="date" placeholder="Departure Date">
+          <input type="number" placeholder="Adults">
+          <input type="number" placeholder="Childern">
+          <input type="submit" value="CHECK AVAILABILITY">
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="about top">
+    <div class="container flex">
+      <div class="left">
+        <div class="heading">
+          <h1>WELCOME</h1>
+          <h2>Android Smart Traveller
+          </h2>
+        </div>
+        <p> Our website is an virtual guide travel android website that helps traveler to plan their trips and explore new places. It uses the user’s interests and preferences to generate a personalized itinerary, including suggested places to visit and activities to do. The website also provides maps, directions and transportation  information. It can help users plan their trips more easily and efficiently. The common goal of making travel easier and more enjoyable.
+        </p>
+        <button class="primary-btn">ABOUT US</button>
+      </div>
+      <div class="right">
+        <img src="images/about.png" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="destinations">
+    <div class="container top">
+      <div class="heading">
+        <h1>EXPOLRE</h1>
+        <h2>Our Destinations</h2>
+        <p>Enjoy wonderfull experiance with us by exploring amazing destinations.
+        </p>
+      </div>
+
+      <div class="content mtop">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          <div class="items">
+            <div class="image">
+              <img src="images/gujarat1.png" alt="">
+            </div>
+            <div class="text">
+              <h2>Gujarat</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Gujarat is a vibrant state known for its rich cultural heritage, historical significance, and thriving economy. It's epitomizes a harmonious blend of tradition and modernity, making it a captivating destination.</p>
+              <div class="button flex">
+                <li><a href="gujarat.html"><button class="primary-btn">EXPOLRE NOW</button></a></li>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/delhi1.png" alt="">
+            </div>
+            <div class="text">
+              <h2>Delhi</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Delhi, the vibrant capital city of India.Beyond its tangible charms, Delhi pulsates with energy, serving as a melting pot of diverse cultures, cuisines, and traditions, making it a truly unforgettable destination.
+              </p>
+              <div class="button flex">
+                <li><a href="delhi.html"><button class="primary-btn">EXPOLRE NOW</button></a></li>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/mumbai1.png" alt="">
+            </div>
+            <div class="text">
+              <h2>Mumbai</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Mumbai, the vibrant metropolis on India's western coast, pulsates with energy and diversity. As the financial, commercial, and entertainment capital of India, it is a city of contrasts. It's also a bollwood city.
+              </p>
+              <div class="button flex">
+                <li><a href="mumbai.html"><button class="primary-btn">EXPOLRE NOW</button></a></li>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/up1.png" alt="">
+            </div>
+            <div class="text">
+              <h2>Uttar Pradesh</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Uttar Pradesh is a state in northern India. With over 241 million inhabitants, it is the most populated state in India as well as the most populous country subdivision in the world. The state is divided into 18 divisions. 
+              </p>
+              <div class="button flex">
+                <li><a href="uttar pradesh.html"><button class="primary-btn">EXPOLRE NOW</button></a></li>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/kerela1.png" alt="">
+            </div>
+            <div class="text">
+              <h2>Kerala</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Kerala, a state on India's tropical Malabar Coast, has nearly 600km of Arabian Sea shoreline. It's known for its palm-lined beaches and backwaters, a network of canals. Support tea, coffee, spice plantations as well as wildlife.
+              </p>
+              <div class="button flex">
+                <li><a href="kerala.html"><button class="primary-btn">EXPOLRE NOW</button></a></li>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/rajasthan1.png" alt="">
+            </div>
+            <div class="text">
+              <h2>Rajasthan</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Rajasthan is a state in northern India. It covers 342,239 square kilometres or 10.4 per cent of India's total geographical area. It is the largest Indian state by area and the seventh largest by population.
+              </p>
+              <div class="button flex">
+                <li><a href="rajasthan.html"><button class="primary-btn">EXPOLRE NOW</button></a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 40,
+      nav: true,
+      dots: false,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2,
+          margin: 10,
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+
+
+  <section class="gallery">
+    <div class="container top">
+      <div class="heading">
+        <h1>PHOTOS</h1>
+        <h2>Our Gallery</h2>
+        <p>Best memories share by our travellers.</p>
+      </div>
+    </div>
+
+    <div class="content mtop">
+      <div class="owl-carousel owl-carousel1 owl-theme">
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-1.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-2.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-3.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-4.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-5.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-6.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-1.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-2.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-3.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-4.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-5.png" alt="">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/gallery-6.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 4,
+        },
+        1000: {
+          items: 6
+        }
+      }
+    })
+  </script>
+
+
+  <section class="services top">
+    <div class="container">
+      <div class="heading">
+        <h1>SERVICES</h1>
+        <h2>Our Services</h2>
+        <p>We provides reliable and easy to use services, which can very helpful to our travellers.</p>
+      </div>
+
+
+      <div class="content flex_space">
+        <div class="left grid2">
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-circle-check"></i>
+              <h3>Booking</h3>
+            </div>
+          </div>
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <h3>Travel Map</h3>
+            </div>
+          </div>
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-cloud"></i>
+                <h3><li><a href="weather.html">Weather</a></li></h3>
+            </div>
+          </div>
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-language"></i>
+              <h3><li><a href="translator.html">Translator</a></li></h3>
+            </div>
+          </div>
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-comments"></i>
+              <h3><li><a href="chatbot.html">Chatbot</a></li></h3>
+            </div>
+          </div>
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-list"></i>
+              <h3>Packing List</h3>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="images/service.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container grid">
+      <div class="box">
+        <img src="images/logo-2.png" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <div class="icon">
+          <i class="fa fa-facebook-f"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-youtube"></i>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Links</h2>
+        <ul>
+          <li>Company History</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Services</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+        </p>
+        <i class="fa fa-location-dot"></i>
+        <label>1201 park street, Avenue, Dhanmondy, Dhaka. </label> <br>
+        <i class="fa fa-phone"></i>
+        <label>[88] 657 524 332</label> <br>
+        <i class="fa fa-envelope"></i>
+        <label>info@dentar.com</label> <br>
+      </div>
+    </div>
+  </footer>
+
+  <div class="legal">
+    <p class="container">Copyright (c) 2022 Copyright Holder All Rights Reserved.</p>
+  </div>
+
+
+
+  <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

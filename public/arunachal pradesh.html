@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arunachal Pradesh</title>
+        <link rel="stylesheet" href="ap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      </head>
+<body>
+  <header>
+    <div class="content flex_space">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt=""></a>
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="login.html" onclick="redirectToLogin()">LOGIN</a> </li>
+          <li><a href="destination.html">destinations</a> </li>
+          <li><a href="weather.html">live weather</a> </li>
+          <li><a href="translator.html">translator</a> </li>
+          <li><a href="chatbot.html">chatbot</a> </li>
+          <li> <button class="primary-btn">BOOK NOW</button> </li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div> 
+  </header>
+
+  <script>
+    function redirectToLogin() {
+        // Check if the user is authenticated or not
+        // You need to replace this with your actual logic to determine if the user is authenticated or not
+        const isAuthenticated = true; // Replace true with your actual logic
+        
+        if (isAuthenticated) {
+            // If the user is authenticated, prevent default link behavior
+            event.preventDefault();
+            
+            // Redirect to the signup_successful.html page
+            window.location.href = "signup_successful.html";
+        }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+    if (errorMessage) {
+        document.getElementById('status-message').innerText = errorMessage;
+    }
+</script>
+      <script>
+        var menulist = document.getElementById('menulist');
+        menulist.style.maxHeight = "0px";
+    
+        function menutoggle() {
+          if (menulist.style.maxHeight == "0px") {
+            menulist.style.maxHeight = "100vh";
+          } else {
+            menulist.style.maxHeight = "0px";
+          }
+        }
+      </script>
+    <main>
+       <section>
+        <div class="d-container">
+         <h1>ARUNACHAL PRADESH</h1>
+         </div>
+         <div class="back">
+         <li><a href="destination.html"><i class="fa-solid fa-circle-chevron-left"></i></a></li>
+        </div>
+      </section>
+      <section class="home">
+           <div class="content">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                       <img src="images/ap1.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/ap2.png" alt="">
+                     </div>
+                     <div class="item">
+                        <img src="images/ap3.png" alt="">
+                     </div>
+                     <div class="item">
+                        <img src="images/ap4.png" alt="">
+                     </div>
+                     <div class="item">
+                        <img src="images/ap5.png" alt="">
+                     </div>
+                </div>
+             </div>
+       </section>
+       <section>
+       <div class="description">
+        <p>Arunachal Pradesh, nestled in the northeastern part of India, is a land of breathtaking beauty and cultural diversity. Often referred to as the "Land of the Dawn-Lit Mountains," Arunachal Pradesh is bordered by Bhutan to the west, China to the north, and Myanmar to the east. With its rugged terrain, lush forests, and snow-capped peaks, the state offers a paradise for nature lovers and adventurers alike. Arunachal Pradesh is home to a rich tapestry of indigenous tribes, each with its own unique customs, languages, and traditions. The state's cultural mosaic is reflected in its vibrant festivals, where traditional dances, music, and rituals are celebrated with fervor. From the colorful festivals of Losar and Ziro Music Festival to the religious fervor of Torgya and Solung, each event provides a glimpse into the cultural richness of the region. The state is dotted with ancient monasteries, including the famed Tawang Monastery, one of the largest monasteries in India and an important pilgrimage site for Tibetan Buddhists. Additionally, Arunachal Pradesh is home to numerous archaeological sites, such as Malinithan and Bhismaknagar, which offer insights into the region's ancient history and heritage.</p>
+       <li><a href="https://en.wikipedia.org/wiki/Arunachal_Pradesh">(For more reference "CLICK HERE")</a></li>
+       </div>
+       </section>
+      </main>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>

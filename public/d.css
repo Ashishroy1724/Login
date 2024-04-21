@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2 {
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex_space {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  .primary-btn {
+    padding: 15px 40px;
+    background: gold;
+    font-weight: bold;
+    color: darkblue;
+  }
+  
+  .secondary-btn {
+    padding: 15px 40px;
+    background: none;
+    border: 2px solid white;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .container {
+    max-width: 85%;
+    margin: auto;
+  }
+  
+  /*--------header---------*/
+  
+  header {
+    height: 10vh;
+    line-height: 10vh;
+    padding: 0 20px;
+    background-color: black;
+  }
+  
+  header img {
+    margin: 5px 0;
+    margin-left: 28px;
+    
+  }
+  
+  header ul {
+    display: inline-block;
+  }
+  
+  header ul li {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  
+  header ul li a {
+    color: gold;
+    margin: 0 10px;
+    transition: 0.5s;
+  }
+  
+  header ul li a:hover {
+    color: lightyellow
+  }
+  
+  header i {
+    margin: 0 20px;
+  }
+  
+  header button {
+    padding: 13px 40px;
+  }
+  
+  header .navlinks span {
+    display: none;
+  }
+  
+  @media only screen and (max-width:768px) {
+    header ul {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #009f7f;
+      overflow: hidden;
+      transition: max-height 0.5s;
+      text-align: center;
+      z-index: 9;
+    }
+  
+    header ul li {
+      display: block;
+    }
+  
+    header ul li a {
+      color: darkblue;
+      
+    }
+
+  
+    header .navlinks span {
+      color: black;
+      display: block;
+      cursor: pointer;
+      line-height: 10vh;
+      font-size: 25px;
+    }
+  }
+  .d-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: serif;
+    font-weight: bolder;
+    background-color: goldenrod;
+    color: darkblue;
+  }
+  .back li a{
+    color: gold;
+    size: 20px;
+    transition: 0.5s;
+    font-size: 25px;
+   position: absolute;
+   margin-top: -97px;
+  }
+  .back li a:hover {
+    
+    color: lightyellow;
+  }
+
+  .home {
+    height: 100vh;
+    color: white;
+  } 
+  
+  .home img {
+    width: 100%;
+    height: 100vh;
+    margin-top: 1%;
+    background-size: 100%;
+    object-fit: cover; 
+  }
+  .home .text {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    
+  }
+  
+  .home .text h1 {
+    font-size: 80px;
+    font-family: serif;
+    font-weight: 500;
+  }
+  
+  .home p {
+    margin: 20px 0;
+    font-size: large;
+  }
+  
+  .home button {
+    margin-right: 20px;
+  }
+  
+  .owl-nav .owl-prev,
+  .owl-nav .owl-next {
+    position: absolute;
+    top: 40%;
+    height: 50px;
+    width: 50px;
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #fff;
+  }
+  
+  .owl-nav .owl-prev {
+    left: 0;
+  }
+  
+  .owl-nav .owl-next {
+    right: 0;
+  }
+  
+  .description p{
+    text-align: justify;
+    font-family: serif;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+  }
+  .description li a{
+    font-family: serif;
+    font-weight: normal;
+    margin-left: 20px;
+    color: darkred;
+    transition: 0.5s;
+  }
+  .description li a:hover {
+    color: darkblue;
+    
+  }

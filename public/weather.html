@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Live weather</title>
+        <link rel="stylesheet" href="weather.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      </head>
+<body>
+  <header>
+    <div class="content flex_space">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt=""></a>
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="login.html" onclick="redirectToLogin()">LOGIN</a> </li>
+          <li><a href="destination.html">destinations</a> </li>
+          <li><a href="weather.html">live weather</a> </li>
+          <li><a href="translator.html">translator</a> </li>
+          <li><a href="chatbot.html">chatbot</a> </li>
+          <li> <button class="primary-btn">BOOK NOW</button> </li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div> 
+  </header>
+
+  <script>
+    function redirectToLogin() {
+        // Check if the user is authenticated or not
+        // You need to replace this with your actual logic to determine if the user is authenticated or not
+        const isAuthenticated = true; // Replace true with your actual logic
+        
+        if (isAuthenticated) {
+            // If the user is authenticated, prevent default link behavior
+            event.preventDefault();
+            
+            // Redirect to the signup_successful.html page
+            window.location.href = "signup_successful.html";
+        }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+    if (errorMessage) {
+        document.getElementById('status-message').innerText = errorMessage;
+    }
+</script>
+      <script>
+        var menulist = document.getElementById('menulist');
+        menulist.style.maxHeight = "0px";
+    
+        function menutoggle() {
+          if (menulist.style.maxHeight == "0px") {
+            menulist.style.maxHeight = "100vh";
+          } else {
+            menulist.style.maxHeight = "0px";
+          }
+        }
+      </script>
+    <main>
+       <section>
+        <div class="d-container">
+         <h1>WEATHER DASHBOARD</h1>
+         </div>
+         <div class="back">
+         <li><a href="index.html"><i class="fa-solid fa-circle-chevron-left"></i></a></li>
+        </div>
+        
+      </section>
+      <div class="container">
+        <div class="header">
+            <div class="search-box">
+                <input type="text" placeholder="Enter your location" class="input-box">
+                <button class="fa-solid fa-magnifying-glass" style="color: #070808;" id="searchBtn"></button>
+            </div>
+        </div>
+        <div class="location-noy-found">
+            <h1>Sorry, Location not found!!!</h1>
+            <img src="assets/404.png" alt="404 Error">
+        </div>
+        <div class="weather-body">
+        <img src="assets/cloud.png" alt="Weather-Image" class="weather-img">
+            <div class="weather-box"> <p class="temperature">0 <sup>°C</sup>
+            </p>
+            <p class="description">Light Rain</p>
+        </div>
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-sharp fa-solid fa-droplet" style="color: #0d0d0d;"></i>
+                <div class="text">
+                    <span id="humidity">45%</span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind" style="color: #111213;"></i>
+                <div class="text">
+                    <span id="wind-speed">12km/H</span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="weather.js"></script>
+    <script src="https://kit.fontawesome.com/9d21862bba.js" crossorigin="anonymous"></script>
+      </main>

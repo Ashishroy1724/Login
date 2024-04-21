@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2 {
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex_space {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  .primary-btn {
+    padding: 15px 40px;
+    background: gold;
+    font-weight: bold;
+    color: darkblue;
+  }
+  
+  .container {
+    max-width: 85%;
+    margin: auto;
+  }
+  
+  /*--------header---------*/
+  
+  header {
+    height: 10vh;
+    line-height: 10vh;
+    padding: 0 20px;
+    background-color: black;
+  }
+  
+  header img {
+    margin: 5px 0;
+    margin-left: 28px;
+  }
+  
+  header ul {
+    display: inline-block;
+  }
+  
+  header ul li {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  
+  header ul li a {
+    color: gold;
+    margin: 0 10px;
+    transition: 0.5s;
+  }
+  
+  header ul li a:hover {
+    color: lightyellow
+  }
+  
+  header i {
+    margin: 0 20px;
+  }
+  
+  header button {
+    padding: 13px 40px;
+  }
+  
+  header .navlinks span {
+    display: none;
+  }
+  
+  @media only screen and (max-width:768px) {
+    header ul {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #009f7f;
+      overflow: hidden;
+      transition: max-height 0.5s;
+      text-align: center;
+      z-index: 9;
+    }
+  
+    header ul li {
+      display: block;
+    }
+  
+    header ul li a {
+      color: darkblue;
+      
+    }
+
+  
+    header .navlinks span {
+      color: black;
+      display: block;
+      cursor: pointer;
+      line-height: 10vh;
+      font-size: 25px;
+    }
+  }
+  .d-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: serif;
+    font-weight: bolder;
+    background-color: greenyellow;
+    color: darkblue;
+    
+  }
+  .back li a{
+    color: gold;
+    size: 20px;
+    transition: 0.5s;
+    font-size: 25px;
+   position: absolute;
+   margin-top: -97px;
+  }
+  .back li a:hover {
+    
+    color: lightyellow;
+  }
+
+   
+
+.container{
+    width: 450px;
+    height: min-content;
+    background-color:whitesmoke;
+    border-radius: 12px;
+    padding: 28px;
+    margin-top: 30px;
+}    
+
+.search-box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box input{
+    width: 84%;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: darkblue;
+    background-color: white;
+    padding: 12px 16px;
+    border-radius: 14px;
+}
+
+.search-box input::placeholder{
+    color: darkblue;
+}
+
+.search-box button{
+    width: 46px;
+    height: 46px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.search-box button:hover{
+    color: darkblue;
+    background-color: yellow;
+}
+
+
+.weather-body{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 20px;
+    border-radius: 10px;
+}
+
+.weather-body img{
+    width: 60%;
+}
+
+.weather-box{
+    margin-block: 20px;
+    text-align: center;
+}
+
+.weather-box .temperature{
+    font-size: 40px;
+    font-weight: 800;
+    position: relative;
+}
+
+.weather-box .temperature sup{
+    font-size: 20px;
+    position: absolute;
+    font-weight: 600;
+}
+
+.weather-box .description{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.humidity, .wind
+{
+    display: flex;
+    align-items: center;
+}
+
+.humidity{
+    margin-left: 20px;
+}
+
+.wind{
+    margin-right: 20px;
+}
+
+.weather-details i{
+    font-size: 36px;
+}
+
+.weather-details .text{
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.text span{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.location-noy-found{
+    width: 80%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.location-noy-found h1{
+    font-size: 20px;
+    color: #6b6b6b;
+    margin-block-end: 15px;
+}
+
+.location-noy-found img{
+    width: 80%;
+}
+
+
