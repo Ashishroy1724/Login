@@ -26,19 +26,20 @@
           </div>
         </div> 
       </header>
-    <div class="container" style="margin-top: 50px;">
+      <div class="container">
         <div class="row">
             <div class="col-mod-3">
                 
             </div>
             <div class="col-md-6 main">
-                <form action="/sign_up" method="POST">
+                <form id="registrationForm" method="POST">
                     <h2> Registration Form</h2>
                     <input type="text" class="box" id="name" name="name" placeholder="Name" required/>
                     <br>
                     <input type="text" class="box" id="age" name="age" placeholder="Age" required/>
                     <br>
                     <input type="text" class="box" id="email" name="email" placeholder="EmailId" required/>
+                    <div id="emailError" class="error-message"></div> <!-- Error message for email -->
                     <br>
                     <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required/>
                     <br>
@@ -48,11 +49,44 @@
                     <br>
                     <input type="submit" value="Submit" id="submit" />
 
-                    </form>
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript code to handle form submission
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get form data
+            var formData = new FormData(this);
+
+            // Send form data to server using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/sign_up", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Form submission successful, redirect to success page
+                        window.location.href = "signup_successful.html";
+                    } else if (xhr.status === 409) {
+                        // Email already exists, display error message
+                        document.getElementById("emailError").innerText = "Email already exists";
+                    } else {
+                        // Other server errors, display generic error message
+                        alert("Email already exists.");
+                    }
+                }
+            };
+
+            // Convert formData to JSON and send
+            xhr.send(JSON.stringify(Object.fromEntries(formData.entries())));
+        });
+    </script>
+    
     
 </body>
 </html>

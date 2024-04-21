@@ -32,27 +32,7 @@
     </div> 
   </header>
 
-  <script>
-    function redirectToLogin() {
-        // Check if the user is authenticated or not
-        // You need to replace this with your actual logic to determine if the user is authenticated or not
-        const isAuthenticated = true; // Replace true with your actual logic
-        
-        if (isAuthenticated) {
-            // If the user is authenticated, prevent default link behavior
-            event.preventDefault();
-            
-            // Redirect to the signup_successful.html page
-            window.location.href = "signup_successful.html";
-        }
-    }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const errorMessage = urlParams.get('error');
-    if (errorMessage) {
-        document.getElementById('status-message').innerText = errorMessage;
-    }
-</script>
+ 
       <script>
         var menulist = document.getElementById('menulist');
         menulist.style.maxHeight = "0px";
